@@ -1,0 +1,56 @@
+ /*
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+ヘッダー
+＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝ 
+*/
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #000000;
+    margin-bottom: 56px;
+}
+.header__logo{
+    font-size: 28px;
+    font-weight: 600;
+}
+.right-area__search form{
+    height: 36px;
+}
+.right-area__search input[type="text"]{
+    border: 2px solid #C6C6C6;
+    background-color: #353739;
+    border-radius: 10px 0 0 10px;
+    color: white;
+    padding-left: 12px;
+}
+.right-area__search button  {
+    background-color: #01BFBD;
+    border: 2px solid #01BFBD;
+    border-radius: 0px 10px 10px 0px;
+    height: 100%;
+    width: 36px;
+    padding: 2px;
+    cursor: pointer;
+}
+.right-area__search button img{
+    height: 24px;
+}
+.right-area__random-btn button{
+    border-radius: 10px;
+    padding: 0 16px;
+    height: 36px;
+    border: 2px solid #01BFBD;
+    cursor: pointer;
+}
+.right-area__random-btn button img{
+    width: 28px;
+}
+.right-area__hamburger button{
+    cursor: pointer;
+    border: 1px solid black;
+}
+.right-area__hamburger button img{
+    height: 24px;
+}

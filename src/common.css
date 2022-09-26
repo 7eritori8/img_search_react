@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+.bc-black{
+    background-color: #000000;
+}
+.bc-aqua{
+    background-color: #01BFBD;
+}
+.bc-lightblack{
+    background-color: #353739;
+}
+/* 文字色 */
+.fc-aqua{
+    color: #01BFBD;
+}
+.fc-white{
+    color: #FFFFFF;
+}
+/* flex系 */
+/* 縦に中央ぞろえ */
+.flex{
+    display: flex;
+}
+.flex-align-center{
+    display: flex;
+    align-items: center;
+}
+/* margin */
+/* margin-right */
+.mr-2{
+    margin-right: 16px;
+}
+/* margin-bottom */
+.mb-14{
+    margin-bottom: 56px;
+}
