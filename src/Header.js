@@ -5,7 +5,7 @@ import "./Header.css";
 const Header = (props) => {
     const [text, setText] = useState("");
     const [searchTextArray, setSearchTextArray] = useState([]);
-    
+
     // ボタンクリックされたときに下記が発火。
     const addSearchTextArray = () => {
         if (text !== "") {
@@ -14,6 +14,10 @@ const Header = (props) => {
             // 配列に入力内容を格納するこの配列はHistory.jsに送られる
             setSearchTextArray([...searchTextArray, text])
         }
+    }
+    const randomImageShow = () => {
+        props.defaultSrcURLs();
+        props.generateRandomURL();
     }
     return (
         <>
@@ -37,7 +41,7 @@ const Header = (props) => {
                         </form>
                     </div>
                     <div className="right-area__random-btn mr-2">
-                        <button id="randomBtn" className="flex-align-center">
+                        <button id="randomBtn" className="flex-align-center" onClick={randomImageShow}>
                             <img src={`/images/ei-random.svg`} alt="randomImage" />
                         </button>
                     </div>
