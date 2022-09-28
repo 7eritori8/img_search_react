@@ -2,15 +2,11 @@ import { useEffect, useState } from "react";
 import Header from "./Header";
 import "./Main.css";
 import Image from "./Image";
+import EriBtn from "./EriBtn";
 
 // todo
-// srcURLsを初期化してランダムなURLを生成して、srcURLSに入れる 済
-// 50回入れる　済
-// ステートをかまうのは画面の表示を変えたいときだけ
-// randomURLを関数をforでぶん回す50こ入ってる配列作って、それをステートにセットして渡す
 // 
 // 追加でやったこと
-// Mainで作ったURL配列をImageに渡す。
 // もらったURLを参照するimageタグを生成これ、何回も描画されちゃいそう？
 // ヘッダーに、初期化処理とURL生成の関数を渡して、ランダムボタンのオンクリックで処理できるようにした
 // 検索した文言で検索URLを生成、画像を表示できるようにした
@@ -18,26 +14,14 @@ import Image from "./Image";
 // console.log(imageLists)Imageコンポーネントで表示しているけど、これはなんのか
 
 // propsに関数を渡して、そのpropsを渡された子コンポーネント側のアクション（ボタンを押す）
-// ヒストリーを作る
-// eriボタンコンポーネントを作成、onEributtonクリックというプロップスがある。
-// エリボタンは何回押されたかカウントを行う。ボタンのラベルにカウント数を表示
-// カウントして、
-// そのEriボタンをクリックすると、onEributtonClickを実行する。
-// onEributtonClickの引数はカウント数をもつ
-// 親側（Main.js）ではエリボタンを呼ぶためにはpropsが必要props名がonEributtonClick、値は引数付きの無名関数。
-//　その引数で受け取った値をコンソールログする。
+// ヒストリーを作る　済
+
 
 const Main = () => {
     //  Header.jsで入力された内容を入れるvalueText
     const [valueText, setValueText] = useState("");
     // 生成したURLを入れておく配列
     const [srcURLs, setSrcURLs] = useState([]);
-
-    // const addSrcURLs = () => {
-    //     setSrcURLs((prev) => {
-    //         return [...prev, valueText]
-    //     });
-    // }
 
     // 初期化処理たちの定義
     const defaultSrcURLs = () => {
@@ -66,9 +50,7 @@ const Main = () => {
             srcURLsArray.push(`https://source.unsplash.com/random/${generateRandomNum()}`)
         }
         // できたURL入りの配列でsrcURLsステートを更新する
-        setSrcURLs(() => {
-            return srcURLsArray;
-        })
+        setSrcURLs(srcURLsArray)
 
     }
     // 検索用の画像URLを生成
@@ -78,9 +60,7 @@ const Main = () => {
             searchURLsArray.push(`https://source.unsplash.com/featured/?${valueText}/${generateRandomNum()}`)
         }
         // 生成したURLでステートを更新
-        setSrcURLs(() => {
-            return searchURLsArray;
-        })
+        setSrcURLs(searchURLsArray)
     }
 
     // 初回レンダリング時処理
@@ -108,9 +88,13 @@ const Main = () => {
 
                     //  onClick={() => { addSrcURLs() }}
                     >yeeeeeeeeeeeeeeeeeeeeeeeee</button>
-                    {/* <h1>{srcURLs}</h1> */}
                 </div>
             </main>
+            <EriBtn onEriButtonClick={
+                (count) => {
+                    console.log(count)
+                }
+            } />
         </>
     )
 }
