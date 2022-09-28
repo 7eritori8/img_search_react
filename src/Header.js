@@ -12,11 +12,13 @@ const Header = (props) => {
             // inputに入力した内容を親コンポーネントに送る
             props.setValueText(text);
             // 配列に入力内容を格納するこの配列はHistory.jsに送られる
-            setSearchTextArray([...searchTextArray, text])
+            setSearchTextArray((prev) => {
+                return [...prev, text]
+            }
+            )
         }
     }
     const randomImageShow = () => {
-        props.defaultSrcURLs();
         props.generateRandomURL();
     }
     return (

@@ -1,11 +1,10 @@
 const History = (props) => {
-    // const historyLists = props.searchTextArray.map(
-    //     (historyList) => <li>{historyList}</li>
-    // )
+    const historyLists = props.searchTextArray.map(
+        (historyList, i) => <li key={`${historyList}${i}`}>{historyList}</li>
+    )
     return (
         <>
-            {/* {historyLists} */}
-            <li>履歴</li>
+            {historyLists}
         </>
     )
 }
