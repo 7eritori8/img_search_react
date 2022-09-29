@@ -4,6 +4,7 @@ import './index.css';
 import Main from './Main.js';
 import reportWebVitals from './reportWebVitals';
 import './common.css';
+import Modal from "react-modal"; 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
