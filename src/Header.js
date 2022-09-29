@@ -3,19 +3,22 @@ import History from "./History";
 import "./Header.css";
 
 const Header = (props) => {
-    const [text, setText] = useState("");
+    const [text, setText] = useState("cat");
     const [searchTextArray, setSearchTextArray] = useState([]);
 
     // ボタンクリックされたときに下記が発火。
     const addSearchTextArray = () => {
         if (text !== "") {
-            // props.onSubmitAtHeader(text)
             // 配列に入力内容を格納するこの配列はHistory.jsに送られる
             setSearchTextArray((prev) => {
                 return [...prev, text]
             }
             )
         }
+    }
+    const searchHistory = (selectedHistoryText) => {
+        props.onSubmitFromHeader(selectedHistoryText)
+        setText(selectedHistoryText)
     }
     useEffect(() => {
 
@@ -34,10 +37,16 @@ const Header = (props) => {
                             />
                             <ul id="search__history">
                                 {/* 配列を渡す。 */}
-                                <History searchTextArray={searchTextArray} />
+                                <History
+                                    searchTextArray={searchTextArray}
+                                    onHistoryListClick={(selectedHistoryText) => {
+                                        searchHistory(selectedHistoryText)
+                                    }
+                                    } />
                             </ul>
                             <button id="submitBtn" type="button" onClick={() => {
                                 props.onSubmitFromHeader(text)
+                                addSearchTextArray()
                             }}>
                                 <img src={`/images/tab_search.svg`} alt="search" />
                             </button>
