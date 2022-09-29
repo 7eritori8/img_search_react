@@ -74,14 +74,14 @@ const Main = () => {
             <main>
                 <div className="img__wrapper">
                     <ul id="img__list">
-                        {/* <Image srcURLs={srcURLs} /> */}
+                        <Image srcURLs={srcURLs} />
                         {/* 画像コンポーネントを読み込みつつ、src属性に渡すURLの配列を渡す */}
 
-                        {
+                        {/* {
                             srcURLs.map((srcURL, i) => {
                                 return <Image key={`${i}${srcURL}`} srcURL={srcURL} />
                             })
-                        }
+                        } */}
                     </ul>
                     <button
 

@@ -1,16 +1,53 @@
 import { useState } from "react";
+import Modal from '@mui/material/Modal';
+
+
 
 const Image = (props) => {
-    // const imageLists = props.srcURLs.map((srcURL, i) => {
-    //     return <li key={`${srcURL}${i}`}><img src={srcURL} /></li>
-    // })
+    const [modalIsOpen, setModalIsOpen] = useState(false);
+    const [clickImageURL, setClickImageURL] = useState("");
+    const handleOpen = () => setModalIsOpen(true);
+    const handleClose = () => setModalIsOpen(false);
+    const imageLists = props.srcURLs.map((srcURL, i) => {
+        return (
+
+            <li key={`${srcURL}${i}`}>
+                <img
+                    src={srcURL}
+                    onClick={
+                        (e) => {
+                            handleOpen(true)
+                            setClickImageURL(e.currentTarget.src)
+                        }} />
+            </li>
+            
+        )
+    })
     return (
         <>
-            <li>
-                <img src={props.srcURL} alt="" />
-            </li>
-            {/* {imageLists} */}
+
+            {/* <li>
+                <img
+                    src={props.srcURL} alt=""
+
+                />
+            </li> */}
+
+
+            {imageLists}
+            <Modal
+                // sx={style}
+                open={modalIsOpen}
+                onClose={handleClose}
+            >
+                <div className="modal-content">
+                    <img src={clickImageURL} alt="" />
+                </div>
+            </Modal>
+
         </>
     )
 }
 export default Image
+
+
