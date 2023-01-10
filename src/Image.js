@@ -20,23 +20,13 @@ const Image = (props) => {
                             setClickImageURL(e.currentTarget.src)
                         }} />
             </li>
-            
+
         )
     })
     return (
         <>
-
-            {/* <li>
-                <img
-                    src={props.srcURL} alt=""
-
-                />
-            </li> */}
-
-
             {imageLists}
             <Modal
-                // sx={style}
                 open={modalIsOpen}
                 onClose={handleClose}
             >

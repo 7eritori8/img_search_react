@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import History from "./History";
 import "./Header.css";
+import Drawer from '@mui/material/Drawer';
 
 const Header = (props) => {
     const [text, setText] = useState("cat");
@@ -23,6 +24,7 @@ const Header = (props) => {
     useEffect(() => {
 
     }, [text])
+    const [hamburgerToggle, setHamburgerToggle] = useState(false)
     return (
         <>
             <header>

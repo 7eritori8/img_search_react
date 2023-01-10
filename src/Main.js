@@ -2,17 +2,6 @@ import { useEffect, useState } from "react";
 import Header from "./Header";
 import "./Main.css";
 import Image from "./Image";
-import EriBtn from "./EriBtn";
-
-// todo
-// 
-// 追加でやったこと
-// 
-// console.log(imageLists)Imageコンポーネントで表示しているけど、これはなんのか
-
-// propsに関数を渡して、そのpropsを渡された子コンポーネント側のアクション（ボタンを押す）済
-// ヒストリーを作る　済
-
 
 const Main = () => {
     // この配列(画像のURL)をImageコンポーネントに渡して画像を表示させる
@@ -36,7 +25,7 @@ const Main = () => {
         // srcURLsステートに入れたい配列を作成
         const srcURLsArray = [];
         // URLを生成して配列に50入れる。
-        for (let i = 0; i < 5; i++) {
+        for (let i = 0; i < 50; i++) {
             srcURLsArray.push(`https://source.unsplash.com/random/${generateRandomNum()}`)
         }
         // 生成したURL入りの配列でsrcURLsステートを更新する
@@ -45,7 +34,7 @@ const Main = () => {
     // 検索する画像のURLを生成
     const generateSearchURL = (text) => {
         const URLArray = [];
-        for (let i = 0; i < 5; i++) {
+        for (let i = 0; i < 50; i++) {
             URLArray.push(`https://source.unsplash.com/featured/?${text}/${generateRandomNum()}`)
         }
         setSrcURLs(URLArray)
@@ -76,23 +65,8 @@ const Main = () => {
                     <ul id="img__list">
                         <Image srcURLs={srcURLs} />
                         {/* 画像コンポーネントを読み込みつつ、src属性に渡すURLの配列を渡す */}
-
-                        {/* {
-                            srcURLs.map((srcURL, i) => {
-                                return <Image key={`${i}${srcURL}`} srcURL={srcURL} />
-                            })
-                        } */}
                     </ul>
-                    <button
-
-                    //  onClick={() => { addSrcURLs() }}
-                    >yeeeeeeeeeeeeeeeeeeeeeeeee</button>
                 </div>
-                <EriBtn onEriButtonClick={
-                    (count) => {
-                        console.log(count)
-                    }
-                } />
             </main>
         </>
     )
