@@ -24,7 +24,6 @@ const Header = (props) => {
     useEffect(() => {
     }, [text])
     const [hamburgerToggle, setHamburgerToggle] = useState(false)
-    console.log(hamburgerToggle)
     return (
         <>
             <header>
@@ -34,7 +33,7 @@ const Header = (props) => {
                 <div className="header__right-area flex-align-center">
                     <div className="right-area__search mr-2">
                         <form action="." className="flex" autoComplete="off">
-                            <input type="text" name="" placeholder="cat dog ..."
+                            <input type="text" name="" id="textForm" placeholder="cat dog ..."
                                 value={text} onChange={(event) => setText(event.target.value)}
                             />
                             <ul id="search__history">
