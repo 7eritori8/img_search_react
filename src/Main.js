@@ -11,9 +11,7 @@ const Main = () => {
     const defaultSrcURLs = () => {
         setSrcURLs([])
     }
-    useEffect(() => {
-        console.log({ srcURLs })
-    }, [srcURLs]);
+    useEffect(() => { }, [srcURLs]);
 
     // 500以下のランダムな整数を生成
     const generateRandomNum = () => {
@@ -51,7 +49,6 @@ const Main = () => {
                 onRandomBtnClick={
                     () => {
                         generateRandomURL()
-                        console.log("clickされました")
                     }
                 }
                 onSubmitFromHeader={

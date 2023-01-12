@@ -1,8 +1,5 @@
 import { useState } from "react";
 import Modal from '@mui/material/Modal';
-
-
-
 const Image = (props) => {
     const [modalIsOpen, setModalIsOpen] = useState(false);
     const [clickImageURL, setClickImageURL] = useState("");

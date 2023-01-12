@@ -22,9 +22,9 @@ const Header = (props) => {
         setText(selectedHistoryText)
     }
     useEffect(() => {
-
     }, [text])
     const [hamburgerToggle, setHamburgerToggle] = useState(false)
+    console.log(hamburgerToggle)
     return (
         <>
             <header>
@@ -59,11 +59,11 @@ const Header = (props) => {
                             <img src={`/images/ei-random.svg`} alt="randomImage" />
                         </button>
                     </div>
-                    <div className="right-area__hamburger">
+                    {/* <div className="right-area__hamburger">
                         <button className="bc-black" id="hamburger__open">
                             <img src={`/images/hamburger.svg`} alt="openMenu" />
                         </button>
-                    </div>
+                    </div> */}
                 </div>
             </header>
         </>
