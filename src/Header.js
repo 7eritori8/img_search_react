@@ -4,7 +4,7 @@ import "./Header.css";
 import Drawer from '@mui/material/Drawer';
 
 const Header = (props) => {
-    const [text, setText] = useState("cat");
+    const [text, setText] = useState("");
     const [searchTextArray, setSearchTextArray] = useState([]);
 
     // ボタンクリックされたときに下記が発火。
